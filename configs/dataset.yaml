@@ -1,0 +1,7 @@
+path: C:/Users/shida/.cache/kagglehub/datasets/pkdarabi/bone-fracture-detection-computer-vision-project/versions/2/BoneFractureYolo8
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 7
+names: ['elbow positive', 'fingers positive', 'forearm fracture', 'humerus fracture', 'humerus', 'shoulder fracture', 'wrist positive']
