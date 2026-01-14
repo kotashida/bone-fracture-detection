@@ -1,10 +1,6 @@
 # Bone Fracture Detection: Computer Vision & Quantitative Analysis
 
-[![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
-[![Framework](https://img.shields.io/badge/Framework-PyTorch%20%7C%20YOLOv8-red.svg)](https://ultralytics.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)]()
-
-## 📝 Project Overview
+## Project Overview
 
 This project implements a sophisticated Computer Vision system designed to automate the detection and localization of bone fractures in X-ray imagery. By leveraging state-of-the-art Deep Learning architectures, specifically **YOLOv8 (You Only Look Once)**, the system addresses the critical medical challenge of diagnostic variability.
 
@@ -12,7 +8,7 @@ The primary objective is to demonstrate the application of **quantitative modeli
 
 ---
 
-## 📊 Key Quantitative Skills
+## Key Quantitative Skills
 
 This project demonstrates proficiency in the following analytical and technical domains:
 
@@ -34,7 +30,7 @@ This project demonstrates proficiency in the following analytical and technical 
 
 ---
 
-## 🔬 Methodology & Quantitative Approach
+## Methodology & Quantitative Approach
 
 ### 1. Data Acquisition & Distribution Analysis
 The model is trained on the [Bone Fracture Detection Computer Vision Project](https://www.kaggle.com/datasets/pkdarabi/bone-fracture-detection-computer-vision-project) dataset.
@@ -57,7 +53,7 @@ The model's performance is not evaluated on simple accuracy, but rather on stati
 
 ---
 
-## 📈 Quantitative Results & Analysis
+## Quantitative Results & Analysis
 
 The following metrics report the performance of the **YOLOv8-Medium** model on the held-out test set ($N=169$ images).
 
@@ -78,7 +74,7 @@ The current results represent a **preliminary baseline** established under const
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 The repository is organized to separate concerns between data ingestion, modeling, and deployment:
 
@@ -101,7 +97,7 @@ bone_fracture_detection/
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### 1. Environment Setup
 ```bash
@@ -141,7 +137,7 @@ python src/evaluate.py --split test
 
 ---
 
-## 🔮 Future Quantitative Expansions
+## Future Quantitative Expansions
 
 *   **Bayesian Hyperparameter Optimization:** Implementing Optuna to statistically search for optimal learning rates and momentum values.
 *   **Ensemble Methods:** Aggregating predictions from models trained on different folds (K-Fold Cross Validation) to reduce variance and quantify uncertainty.
