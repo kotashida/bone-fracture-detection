@@ -53,27 +53,6 @@ The model's performance is not evaluated on simple accuracy, but rather on stati
 
 ---
 
-## Quantitative Results & Analysis
-
-The following metrics report the performance of the **YOLOv8-Medium** model on the held-out test set ($N=169$ images).
-
-| Metric | Value | Statistical Interpretation |
-| :--- | :--- | :--- |
-| **Recall (Sensitivity)** | **0.1790** | The model correctly identified **17.9%** of all ground-truth fractures. This indicates the current model is conservative, missing a significant portion of subtle fractures (high False Negative rate). |
-| **Precision** | **0.0009** | Of the positive predictions made, a low percentage were correct. This suggests the model suffers from a high False Positive rate, likely due to background noise (healthy bone) being misclassified as fractures. |
-| **mAP @ 0.50** | **0.0014** | The area under the Precision-Recall curve at a standard IoU of 0.5. |
-| **mAP @ 0.50:0.95** | **0.0003** | The mean AP averaged over strict localization thresholds. |
-
-### Statistical Analysis of Baseline Performance
-The current results represent a **preliminary baseline** established under constrained training conditions (limited epochs). The quantitative analysis reveals specific areas for optimization:
-1.  **Underfitting:** The convergence of Recall (~18%) with near-zero Precision indicates the model has not yet learned robust feature representations for the 7 distinct fracture classes. The loss landscape has likely not reached a global or effective local minimum.
-2.  **Class Imbalance Impact:** The dataset contains significant background classes (`humerus`, `elbow positive`) which may dominate the gradient updates, suppressing the learning of minority fracture classes (`wrist positive`, `shoulder fracture`).
-3.  **Next Steps for Optimization:**
-    *   **Extended Training Schedule:** Increasing epochs from the baseline to 100+ to allow the AdamW optimizer to converge.
-    *   **Focal Loss Tuning:** Increasing the focusing parameter $\gamma$ in the loss function to penalize hard-misclassified examples (fractures) more heavily than easy negatives (background).
-
----
-
 ## Project Structure
 
 The repository is organized to separate concerns between data ingestion, modeling, and deployment:
@@ -130,7 +109,7 @@ streamlit run src/app.py
 ```
 
 ### 5. Statistical Evaluation
-Run the evaluation script to generate the metrics reported above.
+Run the evaluation script to generate performance metrics (mAP, Recall, Precision) on the test set.
 ```bash
 python src/evaluate.py --split test
 ```
